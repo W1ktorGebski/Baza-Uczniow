@@ -1,0 +1,37 @@
+﻿<Window x:Class="BazaUczniow.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Baza uczniów" Height="600" Width="900">
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Plik">
+                <MenuItem Header="Wczytaj" Click="Wczytaj"/>
+                <MenuItem Header="Zapisz" Click="Zapisz"/>
+            </MenuItem>
+            <MenuItem Header="Edycja">
+                <MenuItem Header="Dodaj użytkownika" Click="DodajUzytkownika"/>
+                <MenuItem Header="Usuń zaznaczonych uczniów" Click="UsunUczniow"/>
+            </MenuItem>
+            <MenuItem Header="Pomoc">
+                <MenuItem Header="O programie" Click="OProgramie"/>
+            </MenuItem>
+        </Menu>
+
+        <ListView Name="ListaUczniow" Margin="10" SelectionMode="Extended">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="PESEL" DisplayMemberBinding="{Binding PESEL}" />
+                    <GridViewColumn Header="Imię" DisplayMemberBinding="{Binding Imie}" />
+                    <GridViewColumn Header="Drugie imię" DisplayMemberBinding="{Binding DrugieImie}" />
+                    <GridViewColumn Header="Nazwisko" DisplayMemberBinding="{Binding Nazwisko}" />
+                    <GridViewColumn Header="Data urodzenia" DisplayMemberBinding="{Binding DataUrodzenia}" />
+                    <GridViewColumn Header="Telefon" DisplayMemberBinding="{Binding Telefon}" />
+                    <GridViewColumn Header="Adres" DisplayMemberBinding="{Binding Adres}" />
+                    <GridViewColumn Header="Miejscowość" DisplayMemberBinding="{Binding Miejscowosc}" />
+                    <GridViewColumn Header="Kod pocztowy" DisplayMemberBinding="{Binding KodPocztowy}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </DockPanel>
+</Window>
